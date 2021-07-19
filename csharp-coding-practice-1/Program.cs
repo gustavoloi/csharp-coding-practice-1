@@ -20,12 +20,13 @@ namespace csharp_coding_practice_1
 
         public static List<int> RandomNumberGenerator(int listSize)
         {
-            List<int> resultList = new List<int>();
-            var rand = new Random();
-            //var rtnlist = new List<double>();
-            for (int i = 0; i < listSize; i++)
+            List<int> resultList = new List<int>(); //Creates the list to be used for storing the array
+            var rand = new Random(); //Create a random object
+            resultList.Add(0); //Makes sure at least one "0" is in the list
+
+            for (int i = 0; i < listSize; i++) //Loop to add items to the list based on the size typed
             {
-                resultList.Add(rand.Next(100)); //100 indicates the range of values
+                resultList.Add(rand.Next(10)); //100 indicates the range of values
             }
 
             return resultList;
@@ -36,13 +37,7 @@ namespace csharp_coding_practice_1
         {
             List<int> displayList = new List<int>();
 
-
-
-
             return displayList;
-
-
-
         }
 
     }
@@ -53,28 +48,22 @@ namespace csharp_coding_practice_1
             // Move the 0 to the center of the array
             // Don't use other numbers
 
-
-
-            int arrCount = Convert.ToInt32(Console.ReadLine().Trim());
-
             List<int> arr = new List<int>();
+            arr = Result.RandomNumberGenerator(10);
 
-            for (int i = 0; i < arrCount; i++)
-            {
-                int arrItem = Convert.ToInt32(Console.ReadLine().Trim());
-                arr.Add(arrItem);
-            }
 
-            foreach (var item in arr)
+            foreach (var item in arr) //Display all the results
             {
                 Console.WriteLine(item);
             }
 
-            List<int> result = Result.ZeroesToCenter(arr);
-            foreach(var item in result)
-            {
-                Console.WriteLine(item);
-            }
+
+            //Save this section for later, after the array is organized
+            //List<int> result = Result.ZeroesToCenter(arr);
+            //foreach(var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
     }
 }
